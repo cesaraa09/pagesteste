@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horários de Alimentação</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Título principal no canto superior esquerdo -->
+    <h1>Horários de Alimentação</h1>
+
+    <!-- Caixa de entrada de parâmetros da rotina -->
+    <div class="parameter-box hidden" id="routine-form">
+      <h2>Definir Nova Rotina</h2>
+      <label for="routine-time">Horário de Ativação (HH:MM):</label>
+      <input type="time" id="routine-time" required>
+      
+      <label for="routine-duration">Duração (segundos):</label>
+      <input type="number" id="routine-duration" min="1" max="300" required>
+      
+      <button type="button" onclick="submitRoutine()">Salvar Rotina</button>
+      <button type="button" class="close-button" onclick="toggleForm()">Cancelar</button>
+    </div>
+
+    <!-- Lista de rotinas criadas -->
+    <div id="routine-list" class="routine-list"></div>
+
+    <!-- Botão flutuante para adicionar rotina -->
+    <button class="add-button" onclick="toggleForm()">+</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
